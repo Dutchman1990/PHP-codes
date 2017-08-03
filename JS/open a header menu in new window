@@ -1,0 +1,9 @@
+(function($){
+			$('li.blank').click( function() {
+				var urls= $(this).find('a').attr('href');
+				window.open(urls, '_blank');
+             });
+			
+})(jQuery);
+
+// blank is a custom class
