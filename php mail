@@ -1,0 +1,55 @@
+<?PHP
+$sender = 'nirjhar.misrty@esolzmail.com';
+$recipient = 'nirjhar.misrty@esolzmail.com';
+$uid = md5(uniqid(time())); 
+$to    = $payer_email;
+            $subject = 'Payment Confirmation';
+            $message = '<html><body><div style="width: 100%; margin: 0 auto; text-align: center;">
+   <div style="display: inline-block;width:550px; vertical-align: middle; padding: 20px; background-color:#ee1622;border-radius:0 25px 0 25px;">
+      <table cellpadding="0" cellspacing="0" style="width:100%; vertical-align: top; background-color:#FFFFFF;margin: 0 auto 30px; padding: 20px 0;border-radius:25px 0 25px 0; font-size: 16px; text-align: left;">
+         <tr>
+            <td colspan="6" style="text-align:center;padding: 0 0 10px;"><a style="color:#01aec8;" href="http://203.196.159.37/lab5/wordpress/redhotbetspro/"><img src="https://esolz.co.in/lab5/wordpress/redhotbetspro/wp-content/uploads/2017/06/logo.png" alt="RedHotBetsPro"></a></td>
+         </tr>
+         <tr>
+            <td colspan="5" style=" padding: 10px 20px 5px 20px; text-decoration: italic;">
+               <strong> Dear '.$firstname.' '.$lastname.',</strong>
+            </td>
+         </tr>
+         <tr>
+            <td style=" padding: 10px 20px 5px 20px;">
+               Thank you for purchasing our '.$item_name.' pack. We have received payment of $ '.$payment_amount.' via PayPal. Your transaction id: '.$txn_id.'.
+            </td>
+         </tr>
+         <tr>
+            <td style=" padding: 10px 20px 5px 20px;">
+               This is an auto generated email. Please do not reply to this message.
+            </td>
+         </tr>
+      </table>
+      <div style="color: white; text-align: center;font-size: 14px;">
+         <p>© 2017 RedhotBetspro®, All Rights Reserved.</p>
+      </div>
+   </div>
+</div> </body> </html>';
+             
+          
+            
+            $headers = 'From:noreply@redhotbetspro.us' . "\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: multipart/mixed; boundary=\"".$uid."\"\r\n\r\n";
+            $headers .= "This is a multi-part message in MIME format.\r\n";
+            $headers .= "--".$uid."\r\n";
+            $headers .= "Content-type:text/html; charset=iso-8859-1\r\n";
+            $headers .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
+
+//$headers .= "--".$uid."--";
+			//$headers .= "X-Mailer: PHP/".phpversion();
+if (mail($recipient, $subject, $message, $headers))
+{
+    echo "Message accepted";
+}
+else
+{
+    echo "Error: Message not accepted";
+}
+?>
