@@ -1,0 +1,8 @@
+function creatr_size(){
+    add_image_size( 'portfolio-thumb',426,296,true );              
+	}
+add_action( 'after_setup_theme','creatr_size' );
+
+// 426 pixels wide by 296 pixels tall, hard crop mode
+
+refe: https://developer.wordpress.org/reference/functions/add_image_size/
