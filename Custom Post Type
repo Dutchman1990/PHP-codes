@@ -10,11 +10,27 @@ function create_posttype() {
       'public' => true,
       'has_archive' => true,
       'rewrite' => array('slug' => 'product'),
+      'menu_icon'=>'dashicons-images-alt',
+      'menu_position' => 5, //menu posion
+      'taxonomies'          => array( 'category' ),    //catrgory supprt
       'supports' => array( 'title', 'editor', 'author', 'thumbnail')
     )
   );
 }
 
+
+
+5 - below Posts
+10 - below Media
+15 - below Links
+20 - below Pages
+25 - below comments
+60 - below first separator
+65 - below Plugins
+70 - below Users
+75 - below Tools
+80 - below Settings
+100 - below second separator
 
 Call:
 
