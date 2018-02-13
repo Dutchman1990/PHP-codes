@@ -56,4 +56,39 @@ Call:
                 <?php echo $count++; ?>           //display post serial no//
                 <?php endwhile; wp_reset_postdata(); endif; ?>
                 
-                ///////////loop end//////////
+                ///////////loop end/////////
+		
+		
+////////custom taxonomy////
+
+add_action( 'init', 'create_products_taxonomies', 0 );
+
+// create two taxonomies, bimpost_cat and writers for the post type "bimpost"
+  function create_products_taxonomies() {
+// Add new taxonomy, make it hierarchical (like categories)
+$labels = array(
+'name'              => _x( 'Trips Categories', 'taxonomy general name' ),
+'singular_name'     => _x( 'trips_cat', 'taxonomy singular name' ),
+'search_items'      => __( 'Search Trip Categories' ),
+'all_items'         => __( 'All Trip Categories' ),
+'parent_item'       => __( 'Parent Trip Category' ),
+'parent_item_colon' => __( 'Parent Trip Category:' ),
+'edit_item'         => __( 'Edit Trip Category' ),
+'update_item'       => __( 'Update Trip Category' ),
+'add_new_item'      => __( 'Add New Trip Category' ),
+'new_item_name'     => __( 'New Trip Category Name' ),
+'menu_name'         => __( 'Trips Categories' ),
+);
+
+$args = array(
+'hierarchical'      => true,
+'labels'            => $labels,
+'show_ui'           => true,
+'show_admin_column' => true,
+//'update_count_callback' => 'my_update_profession_count',
+'query_var'         => true,
+'rewrite'           => array( 'slug' => 'trips_cat' ),
+);
+
+register_taxonomy( 'trips_cat', array( 'trips' ), $args );
+}
