@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>West_Bengal_District</name>
+    <NetworkLink>
+      <name>north</name>
+      <Link>
+        <href><![CDATA[https://www.google.com/maps/d/u/0/kml?forcekml=1&mid=1IEPn4QoF7tvqY5TZ10eqgvH_9sjulnSi&lid=FWSXZZaA4yg]]></href>
+      </Link>
+    </NetworkLink>
+  </Document>
+</kml>
